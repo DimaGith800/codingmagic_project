@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- https://www.figma.com/design/va2axCQFAHeM5sU6EoI3Id/Untitled?node-id=0-1&p=f&t=hUJY2WvEZnS2yD72-0 -->
+</head>
+<body>
+    <header class="header">
+        <div class="header_wrapper">
+            <img class="header_logo" src="img/logo-codingmagic.svg" alt="CodingMagic-logo">
+            <img class="header_darklogo" src="img/logo-codingmagic_inverted.png" alt="CodingMagic-logo">
+            <div class="header_container">
+                <nav class="header_container--nav">
+                    <div class="header_container--nav--filter">
+                        <p class="header_container--nav--filter--text">Інтерактив</p>
+                        <svg class="header_container--nav--filter--svg" width="10" height="6" viewBox="0 0 10 6" stroke="black" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.375 0.375L4.875 5.375L0.375 0.375"  stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <a class="header_container--nav--link" href="#">Наша команда</a>
+                    <a class="header_container--nav--link" href="#">Контакти</a>
+                </nav>
+                <div class="header_container--content">
+                    <div class="header_container--content--themewrapper">
+                        <button class="header_container--content--themewrapper--theme">
+                            <img class="light_theme" src="img/sun.svg" alt="lighttheme">
+                            <img class="moon_theme" src="img/moon.svg" alt="darktheme">
+                        </button>
+                    </div>
+                    <p class="header_container--content--greet">Вітаємо, <span class="greet_username">User</span>!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="modal">
+        <form class="modal_container">
+            <span class="modal_container--close">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.353516 0.353546L7.85352 7.85355M15.3535 15.3535L7.85352 7.85355M7.85352 7.85355L15.3535 0.353546L0.353516 15.3535" stroke="black"/>
+                </svg>
+            </span>
+            <h5 class="modal_container--title">Привіт!</h5>
+            <p class="modal_container--desc">Ви потрапили на сайт інтерактивних ігор та завдань <br>
+            Надіємось, що вам сподобається і ви отримаєте позитивні емоції!
+            Бажаємо Вам гарно провести час!</p>
+            <p class="modal_container--yourname">Введіть своє ім'я:</p>
+            <input class="modal_container--input" type="text" placeholder="Ваше ім'я..." autocomplete="off">
+            <button class="modal_container--submit" type="submit">Зберегти</button>
+        </form>
+    </section>
+    <main class="main">
+        <div class="main_container">
+            <h1 class="main_container--title">Популярні інетрактивні ігри</h1>
+            <section class="main_container--content">
+                <div class="line"></div>
+                <h2 class="main_container--content--title">Перевір в який рік ти народився</h2>
+                <div class="main_container--content--game">
+                    <div class="main_container--content--game--input">
+                        <input class="main_container--content--game--input--itself" type="text" placeholder="Введіть рік народження">
+                        <button class="main_container--content--game--input--button">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="6.52174" cy="6.52174" r="5.52174" stroke="white" stroke-width="2"/>
+                                <path d="M14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L14.2929 15.7071ZM11.468 10.0538L10.7609 9.34665L9.34666 10.7609L10.0538 11.468L11.468 10.0538ZM15.7071 14.2929L11.468 10.0538L10.0538 11.468L14.2929 15.7071L15.7071 14.2929Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="main_container--content--game--response">(високосний / невисокосний)</p>
+                </div>
+            </section>
+            <section class="main_container--content">
+                <div class="line"></div>
+                <h2 class="main_container--content--title">Вгадай число, яке загадав комп’ютер</h2>
+                <div class="main_container--content--game">
+                    <div class="main_container--content--game--input">
+                        <input class="main_container--content--game--input--itself" id="gtn_input" type="text" placeholder="Введіть число">
+                        <button class="main_container--content--game--input--button" id="gtn_submit">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="6.52174" cy="6.52174" r="5.52174" stroke="white" stroke-width="2"/>
+                                <path d="M14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L14.2929 15.7071ZM11.468 10.0538L10.7609 9.34665L9.34666 10.7609L10.0538 11.468L11.468 10.0538ZM15.7071 14.2929L11.468 10.0538L10.0538 11.468L14.2929 15.7071L15.7071 14.2929Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="main_container--content--game--response" id="gtn_response">(від 1 до 10)</p>
+                </div>
+            </section>
+            <section class="main_container--content">
+                <div class="line"></div>
+                <h2 class="main_container--content--title">Камінь - ножиці - папір</h2>
+                <div class="main_container--content--rps">
+                    <div class="main_container--content--rps--wrapper">
+                        <div class="main_container--content--rps--wrapper--game">
+                            <button class="main_container--content--rps--wrapper--game--button" id="rps-rock">
+                                <img class="main_container--content--rps--wrapper--game--button--image" src="img/stone.png" alt="stone">
+                                <img class="main_container--content--rps--wrapper--game--button--invertedimage" src="img/stone-inverted.png" alt="stone-inverted">
+                            </button>
+                            <button class="main_container--content--rps--wrapper--game--button" id="rps-paper">
+                                <img class="main_container--content--rps--wrapper--game--button--image" src="img/scissors.png" alt="scissors">
+                                <img class="main_container--content--rps--wrapper--game--button--invertedimage" src="img/scissors-inverted.png" alt="scissors-inverted">
+                            </button>
+                            <button class="main_container--content--rps--wrapper--game--button" id="rps-scissors">
+                                <img class="main_container--content--rps--wrapper--game--button--image" src="img/paper.png" alt="paper">
+                                <img class="main_container--content--rps--wrapper--game--button--invertedimage" src="img/paper-inverted.png" alt="paper-inverted">
+                            </button>
+                        </div>
+                        <p class="main_container--content--rps--wrapper--score">
+                            Рахунок:
+                            Комп’ютер - <span id="rps-computer-score">0</span>
+                            Ви - <span id="rps-user-score">0</span>
+                        </p>
+                    </div>
+                </div>
+                <p class="main_container--content--response" id="rps-response"></p>
+                <button class="main_container--content--computerspick" id="rps-computerspick">Варіант комп’ютера</button>
+            </section>
+            <section class="main_container--content">
+                <div class="line"></div>
+                <h2 class="main_container--content--title">Калькулятор</h2>
+                <div class="main_container--content--calculator">
+                    <input class="main_container--content--calculator--input" id="input-firstnumber" type="text" placeholder="Введіть число" autocomplete="off">
+                    <div class="main_container--content--calculator--operators">
+                        <button class="main_container--content--calculator--operators--operator" id="operator-plus">+</button>
+                        <button class="main_container--content--calculator--operators--operator" id="operator-multiply">*</button>
+                        <button class="main_container--content--calculator--operators--operator" id="operator-minus">-</button>
+                        <button class="main_container--content--calculator--operators--operator" id="operator-division">/</button>
+                    </div>
+                    <input class="main_container--content--calculator--input" id="input-secondnumber" type="text" placeholder="Введіть число" autocomplete="off">
+                    <button class="main_container--content--calculator--calculate" id="button-calculate">=</button>
+                    <input class="main_container--content--calculator--result" id="calculator-result" type="text" placeholder="Результат" disabled>
+                </div>
+                <p class="main_container--content--response" id="calculator-response"></p>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
