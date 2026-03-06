@@ -10,6 +10,17 @@ const computerScore = document.querySelector('#rps-computer-score');
 const revealComputersPick = document.querySelector('#rps-computerspick');
 const possiblePlays = [rock, paper, scissors];
 
+function isResponseSuccess(message = 'Успішно!') {
+    response.textContent = message;
+    response.style.color = '#039900';
+}
+
+function isResponseError(message = 'Помилка!') {
+    response.textContent = message;
+    response.style.color = '#990000';
+}
+
+
 const RESPONSES = {
     playerWin: 'Ви виграли раунд!',
     computerWin: 'Комп’ютер виграв раунд!',
@@ -66,21 +77,18 @@ function initRockPaperScissorsGameMechanics(userChoice, computerChoice) {
     revealComputersPick.textContent = `Комп'ютер обрав: ${COMPUTER_CHOICES[computerChoice]}`;
 
     if (userChoice == computerChoice) {
-        response.textContent = RESPONSES.tie;
-        response.style.color = '#990000';
+        isResponseError(RESPONSES.tie)
     }
     else if ((userChoice == 'scissors' && computerChoice == 'paper')
         || (userChoice == 'paper' && computerChoice == 'rock')
         || (userChoice == 'rock' && computerChoice == 'scissors')) {
-            response.textContent = RESPONSES.playerWin;
-            response.style.color = '#039900';
+            isResponseSuccess(RESPONSES.playerWin)
 
             let currentScore = parseInt(userScore.textContent) || 0;
             userScore.textContent = currentScore + 1;
         }
     else {
-        response.textContent = RESPONSES.computerWin;
-        response.style.color = '#990000';
+        isResponseError(RESPONSES.computerWin)
 
         let currentScore = parseInt(computerScore.textContent) || 0;
         computerScore.textContent = currentScore + 1;

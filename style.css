@@ -12,6 +12,8 @@
   margin-bottom: 21px;
   position: fixed;
   background-color: #FFFFFF;
+  border-bottom: 0.5px solid #C2C2C2;
+  z-index: 20;
 }
 .header_wrapper {
   width: 100%;
@@ -47,6 +49,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .header_container--nav--filter--text {
   font-family: Montserrat Alternates;
@@ -55,6 +58,42 @@
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
+}
+.header_container--nav--filter--list {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: -33px;
+  border: 1px solid #000000;
+  z-index: 1;
+  border-top: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 160px;
+  background-color: #FFFFFF;
+}
+.header_container--nav--filter--list--button {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+.header_container--nav--filter--list--button:nth-child(3) {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.header_container--nav--filter--list--button:hover {
+  background-color: #F1F1F1;
 }
 .header_container--nav--link {
   font-family: Montserrat Alternates;
@@ -227,6 +266,11 @@
   margin: 0 auto;
   margin-bottom: 36px;
 }
+.main_container .dashed_line {
+  width: 100%;
+  display: block;
+  border-bottom: 1px dashed #000000;
+}
 .main_container--title {
   font-family: Montserrat Alternates;
   font-weight: 400;
@@ -237,14 +281,12 @@
   color: #000000;
   text-align: center;
   margin-bottom: 36px;
+  margin-top: 86px;
 }
-.main_container--content {
+.main_container--game {
   margin-bottom: 36px;
 }
-.main_container--content:nth-child(3) .main_container--content--game--input--itself {
-  width: 115px;
-}
-.main_container--content--title {
+.main_container--game--title {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -255,7 +297,7 @@
   text-align: center;
   margin-bottom: 36px;
 }
-.main_container--content--game {
+.main_container--game--leapyear {
   width: 100%;
   max-width: 577px;
   margin: 0 auto;
@@ -263,12 +305,12 @@
   justify-content: space-between;
   align-items: center;
 }
-.main_container--content--game--input {
+.main_container--game--leapyear--input {
   box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
   border-radius: 20px;
   display: flex;
 }
-.main_container--content--game--input--itself {
+.main_container--game--leapyear--input--itself {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -285,7 +327,7 @@
   border: none;
   outline: none;
 }
-.main_container--content--game--input--button {
+.main_container--game--leapyear--input--button {
   padding: 10px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -293,7 +335,7 @@
   border: none;
   outline: none;
 }
-.main_container--content--game--response {
+.main_container--game--leapyear--response {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -302,7 +344,54 @@
   letter-spacing: 0%;
   text-align: right;
 }
-.main_container--content--rps {
+.main_container--game--guessthenumber {
+  width: 100%;
+  max-width: 577px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main_container--game--guessthenumber--input {
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 20px;
+  display: flex;
+}
+.main_container--game--guessthenumber--input--itself {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  box-sizing: border-box;
+  color: #7e7e7e;
+  background-color: #D7D7D7;
+  width: 115px;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  outline: none;
+}
+.main_container--game--guessthenumber--input--button {
+  padding: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #000000;
+  border: none;
+  outline: none;
+}
+.main_container--game--guessthenumber--response {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+.main_container--game--rps {
   width: 100%;
   max-width: 640px;
   margin: 0 auto;
@@ -310,20 +399,20 @@
   justify-content: flex-end;
   margin-bottom: 36px;
 }
-.main_container--content--rps--wrapper {
+.main_container--game--rps--wrapper {
   width: 100%;
   max-width: 455px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main_container--content--rps--wrapper--game {
+.main_container--game--rps--wrapper--game {
   width: 100%;
   max-width: 256px;
   display: flex;
   justify-content: space-between;
 }
-.main_container--content--rps--wrapper--game--button {
+.main_container--game--rps--wrapper--game--button {
   padding: 10px;
   background-color: #000000;
   border-radius: 20px;
@@ -331,13 +420,13 @@
   outline: none;
   cursor: pointer;
 }
-.main_container--content--rps--wrapper--game--button--image {
+.main_container--game--rps--wrapper--game--button--image {
   display: block;
 }
-.main_container--content--rps--wrapper--game--button--invertedimage {
+.main_container--game--rps--wrapper--game--button--invertedimage {
   display: none;
 }
-.main_container--content--rps--wrapper--score {
+.main_container--game--rps--wrapper--score {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -347,7 +436,7 @@
   color: #000000;
   width: 100px;
 }
-.main_container--content--response {
+.main_container--game--response {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -357,7 +446,7 @@
   text-align: center;
   margin-bottom: 36px;
 }
-.main_container--content--computerspick {
+.main_container--game--computerspick {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -374,7 +463,7 @@
   background-color: #000000;
   color: #FFFFFF;
 }
-.main_container--content--calculator {
+.main_container--game--calculator {
   width: 100%;
   max-width: 630px;
   margin: 0 auto;
@@ -382,7 +471,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.main_container--content--calculator--input {
+.main_container--game--calculator--input {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -398,14 +487,14 @@
   border-radius: 20px;
   width: 135px;
 }
-.main_container--content--calculator--operators {
+.main_container--game--calculator--operators {
   width: 100%;
   max-width: 62px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
-.main_container--content--calculator--operators--operator {
+.main_container--game--calculator--operators--operator {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -421,7 +510,7 @@
   border-radius: 20px;
   background-color: #000000;
 }
-.main_container--content--calculator--calculate {
+.main_container--game--calculator--calculate {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -437,7 +526,7 @@
   border-radius: 20px;
   background-color: #000000;
 }
-.main_container--content--calculator--result {
+.main_container--game--calculator--result {
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
@@ -452,6 +541,183 @@
   padding: 10px 20px;
   width: 120px;
 }
-.main_container--content--response {
+.main_container--game--response {
   margin-top: 36px;
+}
+.main_container--game--timecalc {
+  width: 100%;
+  max-width: 395px;
+  margin: 0 auto;
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.main_container--game--timecalc--input {
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 20px;
+  display: flex;
+}
+.main_container--game--timecalc--input--itself {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  box-sizing: border-box;
+  color: #7e7e7e;
+  background-color: #D7D7D7;
+  width: 115px;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  outline: none;
+}
+.main_container--game--timecalc--input--button {
+  padding: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #000000;
+  border: none;
+  outline: none;
+}
+.main_container--game--timecalc--timeresult {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  width: 100%;
+}
+.main_container--game--football {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 220px;
+  border-radius: 37px;
+  border: 2px solid #000000;
+  cursor: url(img/black-cursor.svg), auto;
+  background-color: #5ABB58;
+  position: relative;
+}
+.main_container--game--football--ball {
+  transform: translate(92px, 85px);
+}
+.main_container--game--largestnumber--inputs {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main_container--game--largestnumber--inputs--input {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #7e7e7e;
+  background-color: #D7D7D7;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  width: 135px;
+}
+.main_container--game--largestnumber--result {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
+  text-align: center;
+  margin-top: 36px;
+  display: none;
+}
+.main_container--game--slider--itself {
+  width: 100%;
+  max-width: 908px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main_container--game--slider--itself--previous {
+  transform: rotate(180deg);
+}
+.main_container--game--slider--itself--photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main_container--game--slider--authorname {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.main_container--game--slider--contribution {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.main_container--game--slider--items {
+  width: 100%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  gap: 6px;
+}
+.main_container--game--slider--items--line {
+  width: 18px;
+  height: 3px;
+  background-color: #D9D9D9;
+  border-radius: 3px;
+}
+.main_container--game--slider--items .active_line {
+  width: 30px;
+  background-color: #797979;
+}
+
+.runner-container {
+  width: 600px;
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.runner-canvas {
+  width: 600px;
+  height: 240px;
+  display: block;
+}
+
+.offline {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
 }/*# sourceMappingURL=style.css.map */

@@ -18,23 +18,33 @@ function isResponseSuccess(message = 'Успішно!') {
     response.style.color = '#039900';
 }
 
-function isResponseError(message) {
+function isResponseError(message = 'Помилка!') {
     response.textContent = message;
     response.style.color = '#990000';
 }
 
+
 function resetOperationChoice() {
-    response.textContent = '';
-    operators.forEach(operator => operator.style.backgroundColor = '');
+    if (firstInput.value === '' && secondInput.value === '') {
+        operators.forEach(operator => operator.style.backgroundColor = '');
+        calculateButton.dataset.currentOperator = '';
+        response.textContent = '';
+    }
 }
 
 function calculate(a, b, operator) {
     if (isNaN(a) || isNaN(b)) {
-        isResponseError('Введіть обидва числа!');
+        isResponseError('Недопустимий формат!');
         return;
     }
+    if (!operator) {
+        isResponseError('Оберіть операцію!');
+        return;
+    }
+
     result.value = '';
-    response.textContent = '';
+    operators.forEach(op => op.style.backgroundColor = '');
+
     switch (operator) {
         case '+':
             isResponseSuccess();
@@ -49,54 +59,60 @@ function calculate(a, b, operator) {
             result.value = a * b;
             break;
         case '/':
-            if (b == 0) {
+            if (b === 0) {
                 isResponseError('На нуль ділити не можна!');
-                break;
-            }
-            else {
+            } else {
                 isResponseSuccess();
                 result.value = a / b;
-                break;
             }
+            break;
     }
+    calculateButton.dataset.currentOperator = '';
 }
 
 function onOperatorClick(evt) {
-    const firstNumber = parseFloat(firstInput.value); 
-    const secondNumber = parseFloat(secondInput.value);
-
     operators.forEach((operator) => operator.style.backgroundColor = '');
     const clickedOperator = evt.currentTarget;
 
+    clickedOperator.style.backgroundColor = 'grey';
+    clickedOperator.style.transition = '0.3s ease';
     switch (clickedOperator) {
         case operatorMinus: 
-            calculate(firstNumber, secondNumber, '-');
-            break;
+            return '-';
         case operatorPlus: 
-            calculate(firstNumber, secondNumber, '+');
-            break;
+            return '+';
         case operatorDivide: 
-            calculate(firstNumber, secondNumber, '/');
-            break;
+            return '/';
         case operatorMultiply: 
-            calculate(firstNumber, secondNumber, '*');
-            break;
+            return '*';
         default:
             console.log('What?');
             break;
     }
-    clickedOperator.style.backgroundColor = 'grey';
-    clickedOperator.style.transition = '0.3s ease';
-}   
+}
 
+function onEqualsClick(evt) {
+    const firstNumber = parseFloat(firstInput.value);
+    const secondNumber = parseFloat(secondInput.value);
+    // Отримуємо збережений оператор з dataset кнопки
+    const currentOperator = calculateButton.dataset.currentOperator;
+
+    if (firstInput.value === '' || secondInput.value === '') {
+        isResponseError('Заповніть обидва поля!');
+        return;
+    }
+
+    calculate(firstNumber, secondNumber, currentOperator);
+}
 function initCalculator() {
     operators.forEach(operator => {
         operator.addEventListener('click', (evt) => {
-            onOperatorClick(evt);
-            calculateButton.dataset.currentOperator = evt.currentTarget.id;
+            const symbol = onOperatorClick(evt);
+            calculateButton.dataset.currentOperator = symbol;
         });
     });
-
+    
+    calculateButton.addEventListener('click', onEqualsClick);
     inputs.forEach(input => input.addEventListener('input', resetOperationChoice));
 }
 
