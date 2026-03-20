@@ -18,9 +18,21 @@ function onCloseButtonClick() {
     modal.style.display = 'none';
 }
 
+function onEscapePress(evt) {
+    if (evt.key === 'Escape') {
+        modal.style.display = 'none';
+    }
+}
+
 function initUserFormSubmit() {
     submit.addEventListener('click', onUserFormSubmit);
     close.addEventListener('click', onCloseButtonClick);
+    document.addEventListener('keydown', onEscapePress);
+    modal.addEventListener('click', (evt) => {
+        if (evt.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 }
 
 export {initUserFormSubmit};

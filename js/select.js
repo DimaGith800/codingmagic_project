@@ -25,7 +25,7 @@ function initChoiceFromList() {
             const category = evt.currentTarget.id; 
 
             items.forEach((item) => {
-                if (category === 'all' || item.classList.contains(category)) {
+                if (item.classList.contains(category)) {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';

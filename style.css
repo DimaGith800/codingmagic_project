@@ -650,8 +650,21 @@
   justify-content: space-between;
   align-items: center;
 }
+.main_container--game--slider--itself--viewport {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 20px;
+}
+.main_container--game--slider--itself--viewport--track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 .main_container--game--slider--itself--previous {
   transform: rotate(180deg);
+  margin-bottom: 75px;
+}
+.main_container--game--slider--itself--next {
+  margin-bottom: 75px;
 }
 .main_container--game--slider--itself--photo {
   width: 150px;
@@ -700,6 +713,239 @@
 .main_container--game--slider--items .active_line {
   width: 30px;
   background-color: #797979;
+}
+.main_container--game--pickascientist--cards {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-bottom: 36px;
+  row-gap: 36px;
+  justify-items: center;
+}
+.main_container--game--pickascientist--cards--card {
+  background-color: #CACACA;
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  padding: 37px 20px;
+}
+.main_container--game--pickascientist--cards--card--name {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 8px;
+  line-height: 170%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #000000;
+}
+.main_container--game--pickascientist--cards--card--life {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 8px;
+  line-height: 170%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #000000;
+}
+.main_container--game--pickascientist--filters--wrapper {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.main_container--game--pickascientist--filters--wrapper--firstcolumn {
+  width: 100%;
+  max-width: 380px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: end;
+  gap: 20px;
+}
+.main_container--game--pickascientist--filters--wrapper--firstcolumn--filter {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  background-color: #000000;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+.main_container--game--pickascientist--filters--wrapper--secondcolumn {
+  width: 100%;
+  max-width: 441px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  gap: 20px;
+}
+.main_container--game--pickascientist--filters--wrapper--secondcolumn--filter {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  background-color: #000000;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  text-align: start;
+}
+.main_container--game--pickascientist--filters--wrapper--secondcolumn--filter:nth-child(4) {
+  line-height: 130%;
+  max-width: 370px;
+}
+.main_container--game--pickascientist--filters--filter {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  background-color: #000000;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.footer {
+  width: 100%;
+  max-width: 1090px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0;
+}
+.footer_darklogo {
+  display: none;
+}
+.footer_contacts {
+  list-style: none;
+}
+.footer_contacts--contact p {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 170%;
+  letter-spacing: 0%;
+  color: #000000;
+}
+.footer_ads--input {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+}
+.footer_ads--input--itself {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #7e7e7e;
+  padding: 10px 39px 10px 10px;
+  background-color: #D7D7D7;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+}
+.footer_ads--input--button {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  padding: 10px;
+  background-color: #000000;
+  animation-timing-function: ease-out;
+  animation-duration: 300ms;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.footer_ads--text {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 6px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
+  margin-top: 18px;
+}
+.footer_modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.footer_modal--container {
+  background-image: url(img/bg-subscribe.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 576px;
+  height: 316px;
+  position: relative;
+  top: 20%;
+  left: 35%;
+  border-radius: 20px;
+}
+.footer_modal--container--close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.footer_modal--container--title {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #000000;
+  padding-top: 105px;
 }
 
 .runner-container {

@@ -94,7 +94,6 @@ function onOperatorClick(evt) {
 function onEqualsClick(evt) {
     const firstNumber = parseFloat(firstInput.value);
     const secondNumber = parseFloat(secondInput.value);
-    // Отримуємо збережений оператор з dataset кнопки
     const currentOperator = calculateButton.dataset.currentOperator;
 
     if (firstInput.value === '' || secondInput.value === '') {
@@ -104,6 +103,7 @@ function onEqualsClick(evt) {
 
     calculate(firstNumber, secondNumber, currentOperator);
 }
+
 function initCalculator() {
     operators.forEach(operator => {
         operator.addEventListener('click', (evt) => {

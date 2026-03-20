@@ -70,28 +70,22 @@ function getComputerChoice() {
     return computedChoice;
 }
 
-function initRockPaperScissorsGameMechanics(userChoice, computerChoice) {
-    if (!userChoice) return;
-    response.textContent = '';
-
+function initRockPaperScissorsGameMechanics(uChoice, computerChoice) {
     revealComputersPick.textContent = `Комп'ютер обрав: ${COMPUTER_CHOICES[computerChoice]}`;
-
-    if (userChoice == computerChoice) {
-        isResponseError(RESPONSES.tie)
-    }
-    else if ((userChoice == 'scissors' && computerChoice == 'paper')
-        || (userChoice == 'paper' && computerChoice == 'rock')
-        || (userChoice == 'rock' && computerChoice == 'scissors')) {
-            isResponseSuccess(RESPONSES.playerWin)
-
-            let currentScore = parseInt(userScore.textContent) || 0;
-            userScore.textContent = currentScore + 1;
-        }
+    if (uChoice == computerChoice) {
+        isResponseError(RESPONSES.tie);
+    } 
+    else if (
+        (uChoice === 'scissors' && computerChoice === 'paper') ||
+        (uChoice === 'paper' && computerChoice === 'rock') ||
+        (uChoice === 'rock' && computerChoice === 'scissors')
+    ) {
+        isResponseSuccess(RESPONSES.playerWin);
+        userScore.textContent = (parseInt(userScore.textContent) || 0) + 1;
+    } 
     else {
-        isResponseError(RESPONSES.computerWin)
-
-        let currentScore = parseInt(computerScore.textContent) || 0;
-        computerScore.textContent = currentScore + 1;
+        isResponseError(RESPONSES.computerWin);
+        computerScore.textContent = (parseInt(computerScore.textContent) || 0) + 1;
     }
 }
 

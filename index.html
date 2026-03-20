@@ -25,8 +25,8 @@
                             <button class="header_container--nav--filter--list--button" id="acquaintance">Ознайомчий</button>
                         </div>
                     </div>
-                    <a class="header_container--nav--link" href="#">Наша команда</a>
-                    <a class="header_container--nav--link" href="#">Контакти</a>
+                    <a class="header_container--nav--link" id="our-team-link" href="#">Наша команда</a>
+                    <a class="header_container--nav--link" id="contacts-link" href="#">Контакти</a>
                 </nav>
                 <div class="header_container--content">
                     <div class="header_container--content--themewrapper">
@@ -190,32 +190,97 @@
                 <h2 class="main_container--game--title">Введіть 3 числа</h2>
                 <div class="main_container--game--largestnumber">
                     <div class="main_container--game--largestnumber--inputs">
-                        <input class="main_container--game--largestnumber--inputs--input" id="largestnumber_input1" type="text" placeholder="Введіть число">
-                        <input class="main_container--game--largestnumber--inputs--input" id="largestnumber_input2" type="text" placeholder="Введіть число">
-                        <input class="main_container--game--largestnumber--inputs--input" id="largestnumber_input3" type="text" placeholder="Введіть число">
+                        <input class="main_container--game--largestnumber--inputs--input" id="largestnumber_input1" type="text" placeholder="Введіть число" autocomplete="off">
+                        <input class="main_container--game--largestnumber--inputs--input" id="largestnumber_input2" type="text" placeholder="Введіть число" autocomplete="off">
+                        <input class="main_container--game--largestnumber--inputs--input" id="largestnumber_input3" type="text" placeholder="Введіть число" autocomplete="off">
                     </div>
                     <p class="main_container--game--largestnumber--result">Найбільше число, яке ви ввели - <span id="largestnumber_result"></span></p>
                 </div>
                 <p class="main_container--game--response" id="largestnumber_response"></p>
             </section>
-            <section class="main_container--game acquaintance">
+            <section class="main_container--game acquaintance" id="our_team">
                 <div class="line"></div>
                 <h2 class="main_container--game--title">Наша команда</h2>
                 <div class="main_container--game--slider">
                     <div class="main_container--game--slider--itself">
-                        <img class="main_container--game--slider--itself--previous" id="slider_previous" src="img/sliderarrow.svg" alt="to-previous">
-                        <img class="main_container--game--slider--itself--photo" id="slider_photo" src="" alt="author">
-                        <img class="main_container--game--slider--itself--next" id="slider_next" src="img/sliderarrow.svg" alt="to-next">
+                        <svg class="main_container--game--slider--itself--previous" id="slider_previous" width="52" height="101" viewBox="0 0 52 101" fill="none" stroke="black" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.353546 0.353516L50.3535 50.3535L0.353546 100.354"/>
+                        </svg>
+                        <div class="main_container--game--slider--itself--viewport">
+                            <div class="main_container--game--slider--itself--viewport--track" id="slider_track"></div>
+                        </div>
+                        <svg class="main_container--game--slider--itself--next" id="slider_next" width="52" height="101" viewBox="0 0 52 101" fill="none" stroke="black" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.353546 0.353516L50.3535 50.3535L0.353546 100.354"/>
+                        </svg>
                     </div>
-                    <h3 class="main_container--game--slider--authorname" id="slider_authorname"></h3>
-                    <p class="main_container--game--slider--contribution" id="slider_contribution"></p>
-                    <div class="main_container--game--slider--items" id="slider_items">
-                        <div class="main_container--game--slider--items--line active_line" id="slider_line"></div>
+                    <div class="main_container--game--slider--items" id="slider_items"></div>
+                </div>
+            </section>
+            <section class="main_container--game acquaintance">
+                <div class="line"></div>
+                <h2 class="main_container--game--title">Обери вченого/их</h2>
+                <div class="main_container--game--pickascientist">
+                    <div class="main_container--game--pickascientist--cards"></div>
+                    <div class="main_container--game--pickascientist--filters">
+                        <div class="main_container--game--pickascientist--filters--wrapper">
+                            <div class="main_container--game--pickascientist--filters--wrapper--firstcolumn">
+                                <button class="main_container--game--pickascientist--filters--wrapper--firstcolumn--filter" id="filter-19th-century">Які вчені народилися в 19 ст.</button>
+                                <button class="main_container--game--pickascientist--filters--wrapper--firstcolumn--filter" id="filter-alphabet">Відсортувати вчених за алфавітом</button>
+                                <button class="main_container--game--pickascientist--filters--wrapper--firstcolumn--filter" id="filter-died-oldest">Відсортувати вчених за кількістю прожитих років</button>
+                                <button class="main_container--game--pickascientist--filters--wrapper--firstcolumn--filter" id="filter-born-latest">Знайти вченого, який народився найпізніше</button>
+                            </div>
+                            <div class="main_container--game--pickascientist--filters--wrapper--secondcolumn">
+                                <button class="main_container--game--pickascientist--filters--wrapper--secondcolumn--filter" id="filter-born-albert">Знайти рік народження Albert Einshtein</button>
+                                <button class="main_container--game--pickascientist--filters--wrapper--secondcolumn--filter" id="filter-surnames-start-c">Знайти вчених, прізвища яких починаються на на літеру “С” </button>
+                                <button class="main_container--game--pickascientist--filters--wrapper--secondcolumn--filter" id="filter-name-start-a">Видалити всіх вчених, ім’я яких починається на “А”</button>
+                                <button class="main_container--game--pickascientist--filters--wrapper--secondcolumn--filter" id="filter-age-oldestandyoungest">Знайти вченого, який прожив найдовше і вченого, 
+                                    який прожив найменше</button>
+                            </div>
+                        </div>
+                        <button class="main_container--game--pickascientist--filters--filter" id="filter-samesurnames">Знайти вчених, в яких співпадають перші літери імені і прізвища</button>
                     </div>
                 </div>
             </section>
         </div>
     </main>
+    <footer class="footer" id="footer">
+        <img class="footer_logo" src="img/logo-codingmagic-footer.svg" alt="CodingMagic-logo">
+        <img class="footer_darklogo" src="img/logo-codingmagic-footer_inverted.png" alt="CodingMagic-logo">
+        <ul class="footer_contacts">
+            <li class="footer_contacts--contact">
+                <p>Тел: +38 (123) 456 78 90</p>
+            </li>
+            <li class="footer_contacts--contact">
+                <p>E-Mail: codingmagic@gmail.com</p>
+            </li>
+            <li class="footer_contacts--contact">
+                <p>Facebook: CodingMagic</p>
+            </li>
+            <li class="footer_contacts--contact">
+                <p>Twitter: CodingMagic</p>
+            </li>
+            <li class="footer_contacts--contact">
+                <p>Instagram: CodingMagic</p>
+            </li>
+        </ul>
+        <div class="footer_ads">
+            <div class="footer_ads--input">
+                <input class="footer_ads--input--itself" id="subscribe-input" type="text" placeholder="Ваша ел. адреса..." required autocomplete="off">
+                <button class="footer_ads--input--button" id="subscribe-button">Підписатись</button>
+            </div>
+            <p class="footer_ads--text">*Підписавшись, Ви зможете ортимувати інформаццію про новинки на сайті</p>
+        </div>
+        <div class="footer_modal" id="subscribe-modal">
+            <form class="footer_modal--container">
+                <span class="footer_modal--container--close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"  stroke="black" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.353516 0.353546L7.85352 7.85355M15.3535 15.3535L7.85352 7.85355M7.85352 7.85355L15.3535 0.353546L0.353516 15.3535"/>
+                    </svg>
+                </span>
+                <h5 class="footer_modal--container--title">Дякую за підписку!</h5>
+            </form>
+        </div>
+    </footer>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

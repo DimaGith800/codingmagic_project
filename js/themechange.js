@@ -3,6 +3,8 @@ const lightThemeImage = document.querySelector('.light_theme');
 const darkThemeImage = document.querySelector('.moon_theme');
 const logo = document.querySelector('.header_logo');
 const darklogo = document.querySelector('.header_darklogo');
+const footerLogo = document.querySelector('.footer_logo');
+const footerDarklogo = document.querySelector('.footer_darklogo')
 const mainContainer = document.querySelector('.main_container');
 const lines = document.querySelectorAll('.line', '.dashed_line');
 const header = document.querySelector('.header');
@@ -22,10 +24,21 @@ const gameInputs = document.querySelectorAll('.main_container--game--leapyear--i
 const calculatorResultInput = document.querySelector('.main_container--game--calculator--result');
 
 const footballField = document.querySelector('#football_field')
+const sliderPrevious = document.querySelector('#slider_previous');
+const sliderNext = document.querySelector('#slider_next');
+
+const scientistFilterButtons = document.querySelectorAll('.main_container--game--pickascientist--filters--wrapper--firstcolumn--filter, .main_container--game--pickascientist--filters--wrapper--secondcolumn--filter, .main_container--game--pickascientist--filters--filter');
+const scientistText = document.querySelectorAll('.main_container--game--pickascientist--cards--card--life, .main_container--game--pickascientist--cards--card--name')
+
+const footerInput = document.querySelector('.footer_ads--input--itself');
+const footerButton = document.querySelector('.footer_ads--input--button');
+const footerModal = document.querySelector('.footer_modal--container')
+const footerModalClose = document.querySelector('.footer_modal--container--close');
 
 function changeTheme() {
     themeChangeContainer.classList.toggle('active');
     const isDark = themeChangeContainer.classList.contains('active');
+    const scientistCards = document.querySelectorAll('.main_container--game--pickascientist--cards--card');
 
     if (isDark) {
         header.style.backgroundColor = "#212121";
@@ -60,6 +73,9 @@ function changeTheme() {
             op.style.color = '#212121';
         });
 
+        footerLogo.style.display = 'none';
+        footerDarklogo.style.display = 'block';
+
         calculatorOperatorEquals.style.backgroundColor = '#F0F8FF';
         calculatorOperatorEquals.style.color = '#212121';
         
@@ -67,6 +83,19 @@ function changeTheme() {
         calculatorResultInput.style.backgroundColor = '#3F3F3F';
 
         footballField.style.border = '2px solid #FFFFFF'
+
+        sliderPrevious.style.stroke = '#F0F8FF';
+        sliderNext.style.stroke = '#F0F8FF';
+
+        scientistFilterButtons.forEach(button => button.style.backgroundColor = '#F0F8FF');
+        scientistFilterButtons.forEach(button => button.style.color = '#000000');
+        scientistCards.forEach(card => card.style.backgroundColor = '#494444');
+
+        footerInput.style.backgroundColor = '#3F3F3F';
+        footerButton.style.backgroundColor = '#F0F8FF';
+        footerButton.style.color = '#000000';
+        footerModal.style.backgroundImage = 'url(../img/bg-subscribe-inverted.png)'
+        footerModalClose.querySelector('svg').style.stroke = '#F0F8FF'
 
         document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, a').forEach(el => {
             el.style.color = '#F0F8FF';
@@ -113,6 +142,22 @@ function changeTheme() {
         calculatorResultInput.style.backgroundColor = '';
 
         footballField.style.border = ''
+
+        sliderPrevious.style.stroke = '';
+        sliderNext.style.stroke = '';
+
+        scientistFilterButtons.forEach(button => button.style.backgroundColor = '');
+        scientistFilterButtons.forEach(button => button.style.color = '');
+        scientistCards.forEach(card => card.style.backgroundColor = '');
+        scientistText.forEach(text => text.style.color = '');
+
+        footerLogo.style.display = 'block';
+        footerDarklogo.style.display = 'none';
+        footerInput.style.backgroundColor = '';
+        footerButton.style.backgroundColor = '';
+        footerButton.style.color = '';
+        footerModal.style.backgroundImage = ''
+        footerModalClose.querySelector('svg').style.stroke = ''
 
         document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, a').forEach(el => {
             el.style.color = '';

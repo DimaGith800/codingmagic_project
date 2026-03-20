@@ -10,6 +10,9 @@ import { initFootball } from "./football.js";
 import { initLargestNumberSearch } from "./largestnumber.js";
 import { initDino } from "./dino.js";
 import { initSlider } from "./slider.js";
+import { initScientistsFilter } from "./scientists.js";
+import { initSubscribeFormSubmit } from "./subscribe.js";
+import { initTravelLinks } from "../travellinks.js";
 
 initUserFormSubmit();
 initThemeChange();
@@ -23,6 +26,9 @@ initFootball();
 initLargestNumberSearch(); 
 initDino();
 initSlider();
+initScientistsFilter();
+initSubscribeFormSubmit();
+initTravelLinks();
 
 document.addEventListener('keydown', (evt) => {
   if (evt.code === 'Space') {
